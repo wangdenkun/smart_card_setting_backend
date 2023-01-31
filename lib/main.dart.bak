@@ -1,0 +1,36 @@
+import 'common/common.dart';
+
+void main() {
+  final app = GetServer();
+  app.get('/', (ctx) => Text('卡片设置后端测试'));
+  app.get('/test/:name', (ctx) {
+    return Json(ctx.request.params);
+  });
+
+  app.get('/room/:id', (ctx){
+    return Json(ctx.request.params);
+  });
+  app.post('/room/:id', (ctx) {
+      // return Json(ctx.);
+    ctx.payload().then((value){
+      debugPrint('---> main payload value: $value');
+      return Json(const {'flg':1});
+    });
+    return Json(ctx.request.params);
+  });
+
+
+  app.ws('/socket', (ws) {
+    ws.onMessage((data) {
+      debugPrint('---> main ws onMessage: $data');
+    });
+
+    ws.onOpen((ws) {
+      debugPrint('---> main ws onOpen: $ws');
+    });
+
+    ws.onClose((ws) {
+      debugPrint('---> main ws onClose: $ws');
+    });
+  });
+}
