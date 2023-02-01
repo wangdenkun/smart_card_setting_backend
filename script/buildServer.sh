@@ -10,4 +10,4 @@ ssh -i ~/Documents/wdk_aly_server_sshkey.pem root@47.104.233.165 "supervisorctl 
 
 # 在服务器上的一些信息
 # dartaotruntime ./main.aot
-#/root/snap/flutter/common/flutter/bin/cache/dart-sdk/bin/dartaotruntime
+#/root/snap/flutter/common/flutter/bin/cache/dar  t-sdk/bin/dartaotruntime
