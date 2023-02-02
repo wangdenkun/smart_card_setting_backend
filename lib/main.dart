@@ -14,6 +14,8 @@ import 'package:smart_card_setting_backend/data_model/room.dart';
 
 const jsonHeader = {
   'content-type': 'application/json',
+  // 支持跨域
+  // 'Access-Control-Allow-Origin': '*'
 };
 
 Response responseOkWithJson(Map<String, dynamic>? body) {
